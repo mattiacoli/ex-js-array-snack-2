@@ -104,7 +104,8 @@ author.sort((a, b) => {
 })
 
 
-// Snack 4 - Calcola età media
+// Snack 4 - Calcola età media -----------------------------------------------------------------------------------------------------
+
 
 // Creare un array (ages) che contiene le età degli autori dei libri.
 const ages = author.map(a => a.age)
@@ -118,7 +119,7 @@ console.log('Snack 4: \n' + 'somma delle età : ', agesSum);
 const media = agesSum / ages.length
 console.log('Snack 4: \n' + 'età media :', media);
 
-/* ###################################################################################################################################################
+/*
   Snack 5 (Bonus)
   Usando la l'API http://localhost:3333/book/{id} usa la combinazione di .map() e Promise.all(), per creare una funzione (getBooks) che a partire da un array di id (ids), ritorna una promise che risolve un array di libri (books).
   Testala con l’array [2, 13, 7, 21, 19] .
@@ -157,7 +158,7 @@ const booksIds = [2, 13, 7, 21, 19];
 })();
 
 
-/* ###################################################################################################################################################
+/*
   Snack 6 (Bonus)
   Crea una variabile booleana (areThereAvailableBooks) per verificare se c’è almeno un libro disponibile.
   Crea un array (booksByPrice) con gli elementi di books ordinati in base al prezzo (crescente).
