@@ -186,6 +186,9 @@ booksByPrice.sort((a, b) => {
   return availableB - availableA
 
 })
+
+// booksByPrice.sort((a,b)=> Number(b.available) - Number(a.available))
+
 console.log('Bonus Snack 6: \n' + 'libri con prezzo crescente ordinati per disponibilità:\n', booksByPrice)
 
 /*
