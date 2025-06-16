@@ -201,7 +201,11 @@ console.log('Bonus Snack 6: \n' + 'libri con prezzo crescente ordinati per dispo
 const tagCounts = books.reduce((acc, b) => {
 
   b.tags.forEach(tag => {
-    acc[tag] = (acc[tag] || 0) + 1
+    if (acc[tag]) {
+      acc[tag]++;
+    } else {
+      acc[tag] = 1
+    }
   })
 
 
