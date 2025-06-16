@@ -57,10 +57,10 @@ console.log('Snack 1: \n' + 'libri con +300 pagine : ', longBooks);
 
 // Creare un array (longBooksTitles) che contiene solo i titoli dei libri contenuti in longBooks.
 const longBooksTitles = longBooks.map(b => b.title);
+console.log('Snack 1: \n' + 'array di titoli di libri con più pagine : \n', longBooksTitles)
 
 // Stampa in console ogni titolo nella console
-console.log('Snack 1: \n' + 'titoli dei libri più pagine :', longBooksTitles)
-
+longBooksTitles.forEach(t => console.log('Snack 1: \n' + 'Singolo titolo di libri con più pagine : \n', t))
 
 // Snack 2 - il primo libro scontato ----------------------------------------------------------------------------------------------
 
@@ -89,7 +89,7 @@ const author = books.map(b => b.author)
 console.log('Snack 3: \n' + 'autori libri: ', author);
 
 // Crea una variabile booleana (areAuthorsAdults) per verificare se gli autori sono tutti maggiorenni.
-const areAuthorsAdult = author.every(a => a.age > 18)
+const areAuthorsAdult = author.every(a => a.age >= 18)
 console.log('Snack 3: \n' + 'sono tutti maggiorenni :', areAuthorsAdult);
 
 // Ordina l’array authors in base all’età, senza creare un nuovo array.
@@ -102,6 +102,10 @@ author.sort((a, b) => {
   return b.age - a.age
 
 })
+
+/* Versione compatta
+  author.sort((a, b)=>(a.age - b.age) * (areAuthorsAdult ? 1 : -1))
+*/
 
 
 // Snack 4 - Calcola età media -----------------------------------------------------------------------------------------------------
@@ -175,6 +179,14 @@ const booksByPrice = books.sort((a, b) => {
   return aPrice - bPrice
 })
 console.log('Bonus Snack 6: \n' + 'libri con prezzo crescente:', booksByPrice);
+
+booksByPrice.sort((a, b) => {
+  const availableA = Number(a.available)
+  const availableB = Number(b.available)
+  return availableB - availableA
+
+})
+console.log('Bonus Snack 6: \n' + 'libri con prezzo crescente ordinati per disponibilità:\n', booksByPrice)
 
 /*
 
